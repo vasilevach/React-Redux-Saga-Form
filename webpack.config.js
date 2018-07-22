@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
 
 module.exports = {
   entry: [
@@ -32,7 +33,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({template: './src/index.html'})
   ],
   devServer: {
     contentBase: './dist',

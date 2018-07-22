@@ -223,5 +223,5 @@ app.post('/example/post', function (req, res) {
   }
 });
 
-
-app.listen(process.env.PORT || 9999);
+const port = process.env.PORT || 9999;
+app.listen(port, () => console.log('Server start at port: ' + port));
