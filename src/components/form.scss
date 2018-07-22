@@ -1,0 +1,11 @@
+.basic-form {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 10px;
+}
+
+.vertical-form {
+  > * {
+    display: flex;
+  }
+}
