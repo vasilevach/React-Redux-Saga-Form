@@ -59,16 +59,9 @@ function* changeFormField(action) {
     ));
 }
 
-function* handleDestroy() {
-  const inputs = document.querySelectorAll('input[type=file]');
-
-  Array.from(inputs).forEach((input) => document.body.removeChild(input));
-}
-
 export default function* form() {
   yield takeLatest(ActionTypes.InitForm, initForm);
   yield takeLatest(ActionTypes.ChangeFormField, changeFormField);
-  yield takeLatest(ActionTypes.DestroyForm, handleDestroy);
 }
 
 export function handleFormSubmit(saga) {
